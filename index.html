@@ -5,24 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PDF/Şəkil → Tək PDF (Birləşdir)</title>
   <style>
-    :root{--bg:#0f172a;--card:#111827;--muted:#334155;--text:#e5e7eb;--accent:#22c55e;--danger:#ef4444}
+    :root{--bg:#ff172a;--card:#111827;--muted:#f34155;--text:#e5e7eb;--accent:#22c55e;--danger:#ef4444}
     *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(135deg,#0f172a,#0b1220);color:var(--text);font-family:system-ui,Segoe UI,Roboto,Arial}
-    .wrap{max-width:1000px;margin:40px auto;padding:20px}
-    .title{font-size:28px;font-weight:700;letter-spacing:.3px;margin-bottom:16px}
+    body{margin:0;background:linear-gradient(135deg,#bbbbbb,#0b1220);color:var(--text);font-family:system-ui,Segoe UI,Roboto,Arial}
+    .wrap{max-width:400px;margin:40px auto;padding:20px}
+    .title{font-size:8px;font-weight:700;letter-spacing:.3px;margin-bottom:16px}
     .card{background:var(--card);border:1px solid #1f2937;border-radius:16px;padding:16px}
     label{display:block;margin-bottom:8px;color:#cbd5e1}
     input[type="file"]{display:block;width:100%;padding:10px;background:#0b1220;border:1px dashed #334155;border-radius:10px;color:#cbd5e1}
-    .row{display:flex;gap:16px;flex-wrap:wrap}
+    .row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  width: 300px;
+}
     .col{flex:1;min-width:320px}
-    .list{margin-top:12px;border:1px solid #1f2937;border-radius:12px;min-height:180px;background:#0b1220;padding:6px}
+    .list{margin-top:12px;border:1px solid #cccccc;border-radius:12px;min-height:180px;background:#0b1220;padding:6px}
     .item{display:flex;align-items:center;gap:10px;background:#0f172a;border:1px solid #1f2937;border-radius:10px;padding:8px 10px;margin:6px 0;cursor:grab}
     .item.dragging{opacity:.6}
     .badge{font-size:12px;padding:2px 6px;border-radius:999px;background:#0b1220;border:1px solid #334155;color:#cbd5e1}
     .name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
     .size{font-variant-numeric:tabular-nums;color:#94a3b8}
     .controls{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
-    .btn{border:1px solid #1f2937;background:#0f172a;color:#e5e7eb;border-radius:12px;padding:10px 14px;cursor:pointer}
+    .btn{border:1px solid #1f2937;background:#bbbbbb;color:#e5e7eb;border-radius:12px;padding:10px 14px;cursor:pointer}
     .btn.primary{background:var(--accent);border-color:#16a34a;color:#052e11;font-weight:700}
     .btn.danger{background:var(--danger);border-color:#b91c1c;color:#2b0a0a;font-weight:700}
     .hint{font-size:12px;color:#94a3b8;margin-top:6px}
@@ -35,24 +40,24 @@
 </head>
 <body>
   <div class="wrap">
-    <div class="title">PDF/Şəkil fayllarını bir yerdə seç və tək PDF kimi yüklə</div>
+    
 
     <section class="card">
       <div class="row">
         <div class="col">
-          <label>Faylları seç (PDF, PNG, JPG) — hamısı eyni siyahıya düşəcək</label>
+          <label>Faylları seç (PDF, PNG, JPG)</label>
           <input type="file" id="mix-input" accept="application/pdf,image/png,image/jpeg" multiple />
           <div class="hint">Sıralamanı aşağıdakı siyahıda sürüklə-buraxla qur.</div>
-        </div>
-        <div class="col">
           <label>Sıra (PDF və Şəkillər birlikdə)</label>
           <div id="mix-list" class="list" aria-label="Fayl siyahısı"></div>
           <div class="controls">
             <button class="btn" id="mix-up">Yuxarı</button>
             <button class="btn" id="mix-down">Aşağı</button>
             <button class="btn danger" id="mix-remove">Sil</button>
-            <button class="btn" id="mix-clear">Hamısını təmizlə</button>
-          </div>
+            <button class="btn" id="mix-clear">Təmizlə</button>
+				
+				  </div>
+        
         </div>
       </div>
       <div class="sep"></div>
